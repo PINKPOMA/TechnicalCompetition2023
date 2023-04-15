@@ -35,13 +35,9 @@ public class ScoreManager : MonoBehaviour
             {
                 if (rankBoard[j].score > rankBoard[j+1].score)
                 {
-                    var temp = rankBoard[j].score;
-                    rankBoard[j].score = rankBoard[j + 1].score;
-                    rankBoard[j + 1].score = temp;
+                    (rankBoard[j].score, rankBoard[j + 1].score) = (rankBoard[j + 1].score, rankBoard[j].score);
 
-                    var stemp = rankBoard[j].name;
-                    rankBoard[j].name = rankBoard[j + 1].name;
-                    rankBoard[j + 1].name = stemp;
+                    (rankBoard[j].name, rankBoard[j + 1].name) = (rankBoard[j + 1].name, rankBoard[j].name);
                 }
             }
         }

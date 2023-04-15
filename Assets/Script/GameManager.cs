@@ -49,8 +49,6 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         stagePlayTime += Time.deltaTime;
-
-
         Cheat();
         nowScoreText.text = $"Score: {score}";
     }

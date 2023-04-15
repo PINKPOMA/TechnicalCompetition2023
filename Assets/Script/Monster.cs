@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -20,10 +21,13 @@ public class Monster : MonoBehaviour
     public Sprite[] sprites;
     public SpriteRenderer _sprite;
 
-  
-    private void Update()
+    private void Start()
     {
         _sprite = GetComponent<SpriteRenderer>();
+    } 
+
+    private void Update()
+    {
         Move();
     }
 

@@ -96,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
             foreach (var enem in enemys)
             {
-                if (enem.name != "EnemyBullet" || enem.name != "EnemyBulletPlus")
+                if (enem.name != "EnemyBullet" && enem.name != "EnemyBulletPlus")
                 {
                     Destroy(enem);
                 }
@@ -158,13 +158,13 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isRight", false);
 
         if (Input.GetKey(KeyCode.UpArrow))
-            transform.Translate(Vector2.up * (Input.GetKey(KeyCode.LeftShift) ? moveSpeed + (moveSpeed / 2) : moveSpeed ) * Time.deltaTime);
+            transform.Translate(Vector2.up * ((Input.GetKey(KeyCode.LeftShift) ? moveSpeed + (moveSpeed / 2) : moveSpeed ) * Time.deltaTime));
         if (Input.GetKey(KeyCode.DownArrow))
-            transform.Translate(Vector2.down * (Input.GetKey(KeyCode.LeftShift) ? moveSpeed  + (moveSpeed / 2) : moveSpeed ) * Time.deltaTime);
+            transform.Translate(Vector2.down * ((Input.GetKey(KeyCode.LeftShift) ? moveSpeed  + (moveSpeed / 2) : moveSpeed ) * Time.deltaTime));
         if (Input.GetKey(KeyCode.LeftArrow))
-            transform.Translate(Vector2.left * (Input.GetKey(KeyCode.LeftShift) ? moveSpeed + (moveSpeed / 2) : moveSpeed ) * Time.deltaTime);
+            transform.Translate(Vector2.left * ((Input.GetKey(KeyCode.LeftShift) ? moveSpeed + (moveSpeed / 2) : moveSpeed ) * Time.deltaTime));
         if (Input.GetKey(KeyCode.RightArrow))
-            transform.Translate(Vector2.right * (Input.GetKey(KeyCode.LeftShift) ? moveSpeed + (moveSpeed / 2) : moveSpeed) * Time.deltaTime);
+            transform.Translate(Vector2.right * ((Input.GetKey(KeyCode.LeftShift) ? moveSpeed + (moveSpeed / 2) : moveSpeed) * Time.deltaTime));
 
         transform.position = new Vector2(Mathf.Clamp(transform.position.x, -maxXPos, maxXPos), 
             Mathf.Clamp(transform.position.y, -maxYPos, maxYPos));
